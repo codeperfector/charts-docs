@@ -1,7 +1,7 @@
 <%
 =begin
 apps: apache
-platforms: kubernetes
+platforms: kubernetes, tanzu-application-catalog
 id: add_nodes
 title: Add new nodes to the Apache cluster
 category: administration
@@ -17,7 +17,7 @@ To add a new node to your Apache cluster, you need to upgrade your installation 
 The following will be an example to add more nodes:
 
 ~~~
-$ helm upgrade my-release bitnami/apache \
+$ helm upgrade my-release <%= variable :repo_name, :platform %>/apache \
 --set rootUser.password=ROOT_PASSWORD \
 --set replicaCount=NUMBER_OF_REPLICAS
 ~~~
