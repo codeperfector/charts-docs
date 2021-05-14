@@ -12,7 +12,7 @@ highlight: 40
 To scale down the PostgreSQL cluster just perform a normal upgrade setting the *replication.slaveReplicas* value to the desired number of nodes. For example, reduce the cluster to the default one replica:
 
 ~~~
-$ helm upgrade bitnami/postgresql \
+$ helm upgrade <%= variable :repo_name, :platform %>/postgresql \
 --set password=POSTGRESQL_PASSWORD \
 --set replication.enabled=true \
 --set replication.slaveReplicas=1 \

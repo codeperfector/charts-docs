@@ -12,7 +12,7 @@ highlight: 40
 To scale down the MySQL cluster, perform a normal upgrade and set the *secondary.replicaCount* value to the desired number of nodes. For example, reduce the cluster to a single replica using the command below. Replace the  ROOT_PASSWORD placeholder with the MySQL *root* password.
 
 ~~~
-$ helm upgrade bitnami/mysql \
+$ helm upgrade <%= variable :repo_name, :platform %>/mysql \
   --set auth.rootPassword=ROOT_PASSWORD \
   --set secondary.replicaCount=1 \
 ~~~

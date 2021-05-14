@@ -17,7 +17,7 @@ To add a new node to your MariaDB cluster, upgrade your installation and provide
 The command below is an example of adding more nodes to an existing MariaDB cluster. Replace the ROOT_PASSWORD placeholder with the *root* account password, and the NUMBER_OF_REPLICAS placeholder with the number of secondary nodes needed.
 
 ~~~
-$ helm upgrade my-release bitnami/mariadb \
+$ helm upgrade my-release <%= variable :repo_name, :platform %>/mariadb \
   --set auth.rootPassword=ROOT_PASSWORD \
   --set secondary.replicaCount=NUMBER_OF_REPLICAS
 ~~~

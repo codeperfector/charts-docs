@@ -22,7 +22,7 @@ To add new members to the etcd cluster, two options are available:
 
   ~~~
   $ CURRENT_REPLICAS=$(kubectl get statefulset/my-release-etcd -o=jsonpath='{.status.replicas}')
-  $ helm upgrade my-release bitnami/etcd \
+  $ helm upgrade my-release <%= variable :repo_name, :platform %>/etcd \
     --set auth.rbac.rootPassword=ETCD_ROOT_PASSWORD \
     --set replicaCount=$((CURRENT_REPLICAS+2))
   ~~~

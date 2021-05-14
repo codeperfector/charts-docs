@@ -15,7 +15,7 @@ If you want to use the version 6.2.1 instead of the 6.0.12, change the *image.ta
 ~~~
 image:
   registry: docker.io
-  repository: bitnami/redis
+  repository: <%= variable :repo_name, :platform %>/redis
   ## Bitnami Redis(TM) image tag
   ## ref: https://github.com/bitnami/bitnami-docker-redis#supported-tags-and-respective-dockerfile-links
   ##

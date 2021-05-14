@@ -11,7 +11,7 @@ highlight: 30
 
 To add nodes, upgrade the chart and set the *replicaCount* parameter to the desired number of nodes. For example, to have 4 nodes in all, use the command below:
 
-    $ helm upgrade --timeout 600s <release> --set "password=${MARIADBGALERA_PASSWORD},replicaCount=4" bitnami/mariadb-galera
+    $ helm upgrade --timeout 600s <release> --set "password=${MARIADBGALERA_PASSWORD},replicaCount=4" <%= variable :repo_name, :platform %>/mariadb-galera
 
 Replace the MARIADBGALERA_PASSWORD placeholder with the administrator password for the MariaDB Galera cluster.
 

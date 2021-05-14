@@ -18,6 +18,6 @@ To add new nodes to the cluster, you should provide some parameters to the upgra
 
 The following will be an example to add one more node:
 
-    $ helm upgrade --timeout 600s <release> --set "password=${ELASTICSEARCH_PASSWORD},cluster.nodes=3,cluster.update.addNodes=true,cluster.update.currentNumberOfNodes=2" bitnami/elasticsearch
+    $ helm upgrade --timeout 600s <release> --set "password=${ELASTICSEARCH_PASSWORD},cluster.nodes=3,cluster.update.addNodes=true,cluster.update.currentNumberOfNodes=2" <%= variable :repo_name, :platform %>/elasticsearch
 
 Where ELASTICSEARCH_PASSWORD is the password obtained with the command that appears after the first installation of the Helm Chart. The cluster will continue up while restarting pods one by one as the quorum is not lost.

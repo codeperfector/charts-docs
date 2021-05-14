@@ -16,6 +16,6 @@ To add a new node to your Kafka cluster, you need to upgrade your installation b
 The following will be an example to add more nodes:
 
 ~~~
-$ helm upgrade my-release bitnami/kafka \
+$ helm upgrade my-release <%= variable :repo_name, :platform %>/kafka \
 --set replicaCount=NUMBER_OF_REPLICAS
 ~~~

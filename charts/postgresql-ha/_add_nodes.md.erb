@@ -19,7 +19,7 @@ To add a new node to your PostgreSQL HA cluster, you need to upgrade your instal
 The following will be an example to add more nodes:
 
 ~~~
-$ helm upgrade my-release bitnami/postgresql-ha \
+$ helm upgrade my-release <%= variable :repo_name, :platform %>/postgresql-ha \
 --set password=POSTGRESQL_PASSWORD \
 --set repmgrPassword=REPMGR_PASSWORD \
 --set replicaCount=NUMBER_OF_REPLICAS \

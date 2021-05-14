@@ -12,7 +12,7 @@ highlight: 40
 To scale down the PostgreSQL-HA cluster just perform a normal upgrade setting the *replicaCount* value to the desired number of nodes. For example, reduce the cluster to one replica (primary node) while enabling the *repmgr* extension:
 
 ~~~
-$ helm upgrade bitnami/postgresql-ha \
+$ helm upgrade <%= variable :repo_name, :platform %>/postgresql-ha \
 --set password=POSTGRESQL_PASSWORD \
 --set repmgrPassword=REPMGR_PASSWORD \
 --set replicaCount=1 \

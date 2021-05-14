@@ -66,11 +66,11 @@ kubectl create namespace monitoring
 helm install prometheus-operator \
     --set prometheus.thanos.create=true \
     --namespace monitoring \
-    bitnami/prometheus-operator
+    <%= variable :repo_name, :platform %>/prometheus-operator
 helm install thanos \
     --values values.yaml \
     --namespace monitoring \
-    bitnami/thanos
+    <%= variable :repo_name, :platform %>/thanos
 ~~~
 
 That's all! Now you have Thanos fully integrated with Prometheus and Alertmanager.

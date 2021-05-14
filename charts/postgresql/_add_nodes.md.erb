@@ -19,7 +19,7 @@ To add a new node to your PostgreSQL cluster, you need to upgrade your installat
 The following will be an example to add more nodes:
 
 ~~~
-$ helm upgrade my-release bitnami/postgresql \
+$ helm upgrade my-release <%= variable :repo_name, :platform %>/postgresql \
 --set password=POSTGRESQL_PASSWORD \
 --set replication.enabled=true \
 --set replication.slaveReplicas=NUMBER_OF_REPLICAS \

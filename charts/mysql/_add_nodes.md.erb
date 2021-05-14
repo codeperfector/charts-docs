@@ -17,7 +17,7 @@ To add a new node to your MySQL cluster, upgrade the installation by providing s
 The command below is an example of adding more nodes. Replace the ROOT_PASSWORD placeholder with the *root* account password, and the NUMBER_OF_REPLICAS placeholder with the number of secondary nodes needed.
 
 ~~~
-$ helm upgrade my-release bitnami/mysql \
+$ helm upgrade my-release <%= variable :repo_name, :platform %>/mysql \
   --set auth.rootPassword=ROOT_PASSWORD \
   --set secondary.replicaCount=NUMBER_OF_REPLICAS
 ~~~

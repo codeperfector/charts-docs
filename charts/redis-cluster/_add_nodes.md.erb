@@ -12,7 +12,7 @@ highlight: 30
 There is a job that will be executed using a *post-upgrade* hook that will allow you to add a new node. To use it, you should provide some parameters to the upgrade:
 
 * Pass as *password* the password used in the installation time. If you did not provide a password follow the intructions from the NOTES.txt to get the generated password. Then, export its value by executing the following (remember to replace *mypassword* with the value you want to set):
-  
+
         $ REDIS_PASSWORD=mypassword
 
 * Set the desired number of nodes at *cluster.nodes*.
@@ -21,6 +21,6 @@ There is a job that will be executed using a *post-upgrade* hook that will allow
 
 The following will be an example to add one more node:
 
-    $ helm upgrade --timeout 600s <release> --set "password=${REDIS_PASSWORD},cluster.nodes=7,cluster.update.addNodes=true,cluster.update.currentNumberOfNodes=6" bitnami/redis-cluster
+    $ helm upgrade --timeout 600s <release> --set "password=${REDIS_PASSWORD},cluster.nodes=7,cluster.update.addNodes=true,cluster.update.currentNumberOfNodes=6" <%= variable :repo_name, :platform %>/redis-cluster
 
 Where REDIS_PASSWORD is the password you have set after the first installation of the Helm Chart. The cluster will continue up while restarting pods one by one as the quorum is not lost.
